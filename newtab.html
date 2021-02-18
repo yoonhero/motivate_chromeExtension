@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="color-scheme" content="dark light">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <style>
+        body {
+            min-width: 400px;
+            height: auto;
+            background-color: #2e3131;
+            border-radius: 20px;
+        }
+        
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .modal__overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        
+        .modal__content {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+            position: relative;
+            padding: 50px 60px;
+            text-align: center;
+            top: 0px;
+            border-radius: 10px;
+            width: 70%;
+            background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        #time_Text,
+        #todo_Text {
+            margin-left: 0;
+            margin-bottom: 1rem;
+        }
+        
+        h4 {
+            color: #6c7a89;
+        }
+        
+        h2 {
+            color: #809fff;
+        }
+        
+        #str {
+            color: white;
+            font-size: 30px;
+            max-width: 70%;
+            margin-left: 50%;
+            margin-top: 10%;
+            transform: translate(-50%);
+        }
+        
+        #animateText {
+            max-width: 100%;
+        }
+        
+        #str_author {
+            color: white;
+            position: absolute;
+            bottom: 7rem;
+            margin-left: 50%;
+            transform: translate(-50%);
+            width: 70%;
+            font-size: 20px;
+        }
+        
+        @media screen and (max-width: 780px) {
+            .modal__content {
+                width: 90%;
+            }
+            #str {
+                margin-top: 5rem;
+                font-size: 30px;
+                max-width: 80%;
+                width: 70%;
+            }
+            #strAuthor {
+                bottom: 6rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="content">
+
+        <span class="slide">
+            <a class="slide_a"><i class="fas fa-bars"></i></a>
+        </span>
+
+        <div id="menu" class="nav">
+            <a href="#" class="close">
+                <i class="fas fa-times"></i>
+            </a>
+
+            <form class="js-toDoForm" data-aos="fade-down">
+                <input type="text" placeholder="Write a to do" />
+
+            </form>
+            <ul class="js-toDoList" style="margin-bottom: 20rem;" data-aos="fade-up"></ul>
+
+
+        </div>
+
+
+    </div>
+
+    <div class="modal" id="animateText">
+        <div class="modal__overlay" style="background-color:#2e3131; text-align:center;">
+
+            <h1 id="clock" style="color:#eeeeee;">00:00</h1>
+            <div id="str" style="color:#eeeeee;"></div>
+            <div id="str_author" style="color:#eeeeee;"></div>
+        </div>
+
+    </div>
+
+    <script src="popup.js"></script>
+    <script src="./todo.js"></script>
+</body>
+
+</html>
