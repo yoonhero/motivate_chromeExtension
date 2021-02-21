@@ -1,6 +1,7 @@
 function saveName(event) {
     event.preventDefault()
     const nameInput = document.querySelector(".nameInput")
+    var welcomeText = ["Good Morning, ", "Hello, ", "Welcome, ", "좋은 하루 되세요, ", "오늘도 힘내세요, ", "힘내요!! ", "어제보다 나은 오늘을 만들어요, "]
     if (nameInput.value != null) {
         localStorage.setItem("name", nameInput.value);
         document.querySelector(".page").classList.add("hidden")
