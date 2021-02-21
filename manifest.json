@@ -1,24 +1,18 @@
 {
     "manifest_version": 2,
     "short_name": "동기부여 MOTIVATE",
-    "name": "동기부여 ",
-    "description": "🚀 동기 부여가 필요하시나요? 동기부여를 받고 힘차게 오늘을 시작하세요!! 🚀",
+    "name": "오늘도 동기부여",
+    "description": "🚀 동기 부여가 필요하시나요? 동기부여를 받고 힘차게 오늘을 시작하세요!! 당신의 꿈을 응원합니다. 🚀",
     "version": "1.0.0",
+    "author": "Yoonhero",
     "browser_action": {
         "default_icon": "icon.png",
         "default_popup": "popup.html"
     },
-    "content_scripts": [{
-        "matches": [
-            "<all_urls>"
-        ],
-        "js": ["content.js"]
-    }],
     "permissions": [
-        "tabs",
         "<all_urls>",
-        "storage"
-
+        "storage",
+        "geolocation"
     ],
     "chrome_url_overrides": {
         "newtab": "newtab.html"

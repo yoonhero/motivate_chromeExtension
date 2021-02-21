@@ -1,51 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma-rtl.min.css">
-    <title>popup</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    
+    <title>Quotes</title>
     <style>
+        :root {
+            --bodyBackground: #2e3131;
+            --background: #2D3135;
+            --textColor: #eeeeee;
+            --baseColor: #ffffff;
+        }
+        html{
+            overflow: hidden;
+        }
         body {
+            width: 400px;
+            height: 300px;
             margin: 10px;
             text-align: center;
             padding: 0;
             background: transparent;
         }
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
         
-        .box {
-            padding: 20px;
+        .modal__overlay {
+            background-color: var(--bodyBackground);
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        
+        .modal__content {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+            position: relative;
+            padding: 50px 60px;
+            text-align: center;
+            top: 0;
+            border-radius: 10px;
+            width: 90%;
+            background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+        }
+        #str {
+            color: var(--baseColor);
+            font-size: 20px;
+            min-width: 90%;
+            margin-left: 50%;
+            margin-top: 10%;
+            transform: translate(-50%);
+            font-weight: 600;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        
+        #animateText {
+            max-width: 100%;
+        }
+        
+        #str_author {
+            color: var(--baseColor);
+            position: absolute;
+            margin-top: 4rem;
+            margin-left: 50%;
+            transform: translate(-50%);
+            width: 70%;
+            font-size: 14px;
+            font-family: 'Nanum Gothic', sans-serif;
+            font-weight: 400;
         }
     </style>
 </head>
-
 <body>
-    <div class="box">
-        <div class="content">
-            <h3>Choose Language</h3>
+    <div class="modal" id="animateText">
+        <div class="modal__overlay">
+            <div id="str"></div>
+            <div id="str_author"></div> 
         </div>
 
-        <div class="tabs is-toggle is-fullwidth">
-            <ul>
-                <li class=" koreanSelect">
-                    <a>
-                        <span class="icon is-small"><img src="./img/korea.png"></span>
-                        <span>KOREAN</span>
-                    </a>
-                </li>
-                <li class="englishSelect">
-                    <a>
-                        <span class="icon is-small"><img src="./img/uk.png"></span>
-                        <span>ENGLISH</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
     </div>
-    <script src="./selectLan.js"></script>
+    <script src="./quote.js"></script>
 </body>
-
 </html>

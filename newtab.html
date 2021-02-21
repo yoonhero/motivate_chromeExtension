@@ -8,103 +8,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
-    <style>
-        body {
-            min-width: 400px;
-            height: auto;
-            background-color: #2e3131;
-            border-radius: 20px;
-        }
-        
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-        
-        .modal__overlay {
-            background-color: rgba(0, 0, 0, 0.6);
-            width: 100%;
-            height: 100%;
-            position: absolute;
-        }
-        
-        .modal__content {
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-            position: relative;
-            padding: 50px 60px;
-            text-align: center;
-            top: 0px;
-            border-radius: 10px;
-            width: 70%;
-            background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-        }
-        
-        .hidden {
-            display: none;
-        }
-        
-        #time_Text,
-        #todo_Text {
-            margin-left: 0;
-            margin-bottom: 1rem;
-        }
-        
-        h4 {
-            color: #6c7a89;
-        }
-        
-        h2 {
-            color: #809fff;
-        }
-        
-        #str {
-            color: white;
-            font-size: 30px;
-            max-width: 70%;
-            margin-left: 50%;
-            margin-top: 10%;
-            transform: translate(-50%);
-        }
-        
-        #animateText {
-            max-width: 100%;
-        }
-        
-        #str_author {
-            color: white;
-            position: absolute;
-            bottom: 7rem;
-            margin-left: 50%;
-            transform: translate(-50%);
-            width: 70%;
-            font-size: 20px;
-        }
-        
-        @media screen and (max-width: 780px) {
-            .modal__content {
-                width: 90%;
-            }
-            #str {
-                margin-top: 5rem;
-                font-size: 30px;
-                max-width: 80%;
-                width: 70%;
-            }
-            #strAuthor {
-                bottom: 6rem;
-            }
-        }
-    </style>
+    <title>New Tab</title>
 
 </head>
 
 <body>
+
+    <div class="modal page hidden" id="animateText" style="z-index: 20;">
+        <div class="modal__overlay">
+
+            <h1 class="clock">00:00</h1>
+            <h1 class="firstPage">Please Enter Your Name</h1>
+            <form action="submit" class="nameForm">
+                <input type="text" class="nameInput" />
+            </form>
+
+        </div>
+
+    </div>
+
     <div id="content">
 
         <span class="slide">
@@ -116,30 +38,71 @@
                 <i class="fas fa-times"></i>
             </a>
 
-            <form class="js-toDoForm" data-aos="fade-down">
-                <input type="text" placeholder="Write a to do" />
-
+            <form action="submit" class="form js-toDoForm">
+                <input type="text" class="input_text" placeholder="Write a to do" />
             </form>
-            <ul class="js-toDoList" style="margin-bottom: 20rem;" data-aos="fade-up"></ul>
-
-
+            <h3>ToDo</h3>
+            <ul class="pending_li js-toDoList" style="margin-bottom: 20rem;"></ul>
+            <h3>
+                Done
+            </h3>
+            <ul class="finished_li js-toDoList" style="margin-bottom: 20rem;"></ul>
         </div>
 
 
     </div>
 
     <div class="modal" id="animateText">
-        <div class="modal__overlay" style="background-color:#2e3131; text-align:center;">
+        <div class="modal__overlay">
 
-            <h1 id="clock" style="color:#eeeeee;">00:00</h1>
-            <div id="str" style="color:#eeeeee;"></div>
-            <div id="str_author" style="color:#eeeeee;"></div>
+            <h1 id="clock">00:00</h1>
+            <div class="bar">
+                <form class="search_form">
+                    <input class="searchbar" type="text" title="Search">
+                    <a href="#"> <i class="fas fa-search search_button "></i></a>
+                </form>
+
+            </div>
+            <div id="str"></div>
+            <div id="str_author"></div>
+            <img class="Icon">
+            <div class="weatherContainer hidden">
+                <img class="weatherIcon">
+                <p>
+                    <span>temp: </span><span class="temp"></span> <span>°C</span><br/>
+                    <span>humidity: </span><span class="humi"></span> <span>%</span><br/>
+                    <span>location: </span> <span class="loca"></span><br/>
+                </p>
+            </div>
+            <button class="darkBtn"><i class="fas fa-moon"></i></button>
+            <div class="selectLang">
+                <img src="./img/korea.png" class="selectLangImg">
+            </div>
+
+
+            <p class="user"><span class="sayHello">Hello!  </span><span class="userName"> </span>!</p>
         </div>
 
     </div>
+    <!--
+        <div class="back">
+        <img src="https://source.unsplash.com/random" class="backImg">
+    </div>
+    -->
 
-    <script src="popup.js"></script>
+
+
+    </script>
+    <script src="./firstPage.js"></script>
+    <script src="./search.js"></script>
+    <script src="./newtab.js"></script>
     <script src="./todo.js"></script>
+
 </body>
 
 </html>
+
+<!--
+    FqUvNFYA1wDxRhefdNVn4nIBRkZX9f9eLytHLSGetmM
+FSVmFASEZfZhFx9hdc8Lh3u4bK9-5rSTdtgvuNlB2ak
+-->

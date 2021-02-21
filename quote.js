@@ -345,20 +345,6 @@ const quotes = [{
 ];
 
 
-function clock() {
-    var clockTarget = document.getElementById("clock");
-
-    var date = new Date();
-
-    var hours = date.getHours();
-
-    var minutes = date.getMinutes();
-
-    var seconds = date.getSeconds();
-
-    clockTarget.innerText = `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
-
-}
 function getRandomQuote() {
     return fetch(RANDOM_QUOTE_API_URL)
         .then((response) => response.json())
@@ -385,9 +371,9 @@ async function ls(items) {
     }
 }
 
+
+
 function init() {
-    document.querySelector(".slide_a").addEventListener("click", openSlideMenu)
-    document.querySelector(".close").addEventListener("click", closeSlideMenu)
     const str_Text = document.getElementById("str");
     const str_author = document.getElementById("str_author");
     str_Text.innerText = "";
@@ -395,9 +381,7 @@ function init() {
         ls(items)
     });
 
-    clock();
 
-    setInterval(clock, 1000);
 
     (function animate() {
         str.length > 0 ?
@@ -417,17 +401,4 @@ function init() {
     return random;
 }
 
-function openSlideMenu() {
-    document.querySelector(".slide_a").style.display = "none"
-    document.getElementById('menu').style.width = '250px';
-    document.getElementById('content').style.marginLeft = '250px';
-}
-
-function closeSlideMenu() {
-
-    document.getElementById('menu').style.width = '0';
-    document.getElementById('content').style.marginLeft = '0';
-    document.querySelector(".slide_a").style.display = "block"
-}
-
-window.onload = init;
+window.onload = init
