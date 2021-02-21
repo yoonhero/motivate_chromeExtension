@@ -441,10 +441,9 @@ function darkMode() {
     chrome.storage.sync.get("dark", (items) => {
         console.log(items)
         if (items.dark === undefined) {
-            console.log(items.value)
             chrome.storage.sync.set({ "dark": "true" }, function () { });
-            console.log(items.value)
-            element.style.setProperty("--bodyBackground", "#2e3131");
+            const style = document.documentElement.style
+            style.setProperty("--bodyBackground", "#2e3131");
             style.setProperty("--background", "#2D3135");
             style.setProperty("--textColor", "#eeeeee");
             style.setProperty("--baseColor", "#ffffff");
